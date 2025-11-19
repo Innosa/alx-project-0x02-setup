@@ -1,7 +1,7 @@
-export default function About() {
+export default function AboutPage() {
   return (
-    <header className="bg-red-600 text-white p-6 text-center">
-      <h1 className="text-3xl font-bold">My ALX Project</h1>
-    </header>
+    <div className="p-6">
+      <h1 className="text-3xl font-bold">About Us</h1>
+    </div>
   );
 }
