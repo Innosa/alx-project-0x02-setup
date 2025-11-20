@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <div>
-      <h1>Welcome to My ALX Next.js Project!</h1>
-      <p>Everything is set up correctly!</p>
+      <h1>Welcome to ALX Next.js Project Building</h1>
+      <p>This is where we learn and do hardthings.</p>
     </div>
-  );
+  )
 }
