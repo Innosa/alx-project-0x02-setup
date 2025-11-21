@@ -1,8 +1,8 @@
-export default function About () {
+export default function AboutPage () {
     return (
         <div>
             <h1>
-                Welcome to about page, alx project routing.
+                This is About page, alx project routing.
             </h1>
         </div>
     );
