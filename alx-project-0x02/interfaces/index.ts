@@ -1,5 +1,5 @@
-export interface PostProps {
-  userId: number;
-  title: string;
-  content: string;
+export interface UserProps {
+  name: string;
+  email: string;
+  address: string;
 }
