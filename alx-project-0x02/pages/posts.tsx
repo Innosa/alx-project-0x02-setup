@@ -1,13 +1,48 @@
-import Header from '@/components/layout/Header';
+import React, { useState, useEffect } from 'react';
+import PostCard from '@/components/common/PostCard';
 
-export default function PostsPage() {
+type Post = {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+};
+
+const PostsPage = () => {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(res => res.json())
+      .then(data => {
+        setPosts(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        alert('Failed to load posts');
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div>Loading posts...</div>;
+  }
+
   return (
     <div>
-      <Header />
-      <main className="max-w-4xl mx-auto p-6">
-        <h1 className="text-2xl font-bold">Posts Page</h1>
-        <p>You can watch my post here!</p>
-      </main>
+      <h1>All Posts</h1>
+
+      {posts.map(post => (
+        <PostCard
+          key={post.id}
+          title={post.title}
+          content={post.body}
+          userId={post.userId}
+        />
+      ))}
     </div>
   );
-}
+};
+
+export default PostsPage;
