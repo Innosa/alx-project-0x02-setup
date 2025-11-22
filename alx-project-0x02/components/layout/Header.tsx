@@ -7,6 +7,8 @@ export default function Header() {
         <div className="flex gap-8 justify-center text-xl">
           <Link href="/home">Home</Link>
           <Link href="/about">About</Link>
+          <Link href="/posts">Posts</Link>
+
         </div>
       </nav>
     </header>
